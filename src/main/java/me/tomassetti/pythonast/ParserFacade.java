@@ -1,14 +1,15 @@
 package me.tomassetti.pythonast;
 
-import me.tomassetti.pythonast.parser.Python3Lexer;
-import me.tomassetti.pythonast.parser.Python3Parser;
-import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+
+import main.antlr.Python3Lexer;
+import main.antlr.Python3Parser;
 
 public class ParserFacade {
 

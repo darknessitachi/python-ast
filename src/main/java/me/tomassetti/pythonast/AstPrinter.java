@@ -1,9 +1,10 @@
 package me.tomassetti.pythonast;
 
-import me.tomassetti.pythonast.parser.Python3Parser;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.tree.ParseTree;
+
+import main.antlr.Python3Parser;
 
 public class AstPrinter {
 
@@ -26,7 +27,13 @@ public class AstPrinter {
             for (int i = 0; i < indentation; i++) {
                 System.out.print("  ");
             }
-            System.out.println(ruleName);
+            System.out.println("[" + ruleName + "]");
+//            System.out.println("---------------------------");
+            for (int i = 0; i < indentation; i++) {
+                System.out.print("  ");
+            }
+            System.out.println(ctx.getText());
+//            System.out.println("---------------------------");
         }
         for (int i=0;i<ctx.getChildCount();i++) {
             ParseTree element = ctx.getChild(i);

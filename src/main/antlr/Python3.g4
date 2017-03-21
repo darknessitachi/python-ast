@@ -30,7 +30,6 @@
  */
 grammar Python3;
 
-
 // All comments that start with "///" are copy-pasted from
 // The Python Language Reference: https://docs.python.org/3.3/reference/grammar.html
 
@@ -567,7 +566,7 @@ atom
  | '{' dictorsetmaker? '}' 
  | NAME 
  | number 
- | string+ 
+ | str+ 
  | '...' 
  | NONE
  | TRUE
@@ -675,7 +674,7 @@ yield_arg
  | testlist
  ;
 
-string
+str
  : STRING_LITERAL
  | BYTES_LITERAL
  ;
@@ -868,7 +867,7 @@ RIGHT_SHIFT_ASSIGN : '>>=';
 POWER_ASSIGN : '**=';
 IDIV_ASSIGN : '//=';
 
-SKIP
+SKIP_
  : ( SPACES | COMMENT | LINE_JOINING ) -> skip
  ;
 
@@ -1556,3 +1555,4 @@ fragment ID_CONTINUE
  | [\uFF10-\uFF19]
  | '\uFF3F'
  ;
+ 
